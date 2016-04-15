@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en-us"><head>
+<meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
+<meta name="ROBOTS" content="NOARCHIVE">
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><title>HW2</title>
+
+<link rel="stylesheet" type="text/css" href="../style.css"></head>
+<body>
+<p class="title">COMS4111, Fall 2015<br>
+Homework 2</p>
+<ul>
+<li>Due date: Saturday October 24, 5:00pm. <span style="color: red;">You
+can not use grace days for this homework - you must submit your
+solution by the due date as we will post the solutions shortly after
+(due to the upcoming midterm exam).</span></li>
+<li>You should submit your answers <b>electronically </b>
+as described below.</li>
+<li><font color="#000040">This is a homework
+assignment, not a project; you should work on this assignment <strong>individually</strong>.</font></li>
+</ul>
+<p>&nbsp;</p>
+<p>This assignment uses a database with data about a university; the database resides in our Oracle servers. The schema of
+the database is provided below. Keys are in bold face and underlined,
+field
+types are omitted; assume that appropriate foreign key constraints have
+been
+defined in the full version of the schema (for example, a <i>dname</i>
+in the <i>prof</i>
+table does indeed references a department that exists in the <i>dept</i>
+table):</p>
+<p>&nbsp;</p>
+<ul>
+<li>student(<u><b>sid</b></u>, sname,
+sex, age, year, gpa) </li>
+<li>dept(<u><b>dname</b></u>, numphds) </li>
+<li>prof(<u><b>pname</b></u>, dname) </li>
+<li>course(<u><b>cno</b></u>, cname, <u><b>dname</b></u>)
+</li>
+<li>major(<u><b>dname</b></u>, <u><b>sid</b></u>)
+</li>
+<li>section(<u><b>dname</b></u>, <u><b>cno</b></u>,
+<u><b>sectno</b></u>, pname) </li>
+<li>enroll(<u><b>sid</b></u>, grade, <u><b>dname</b></u>,
+<u><b>cno</b></u>, sectno)</li>
+</ul>
+<p>&nbsp;</p>
+<p>We ask that you write the following queries in SQL. Each question is worth 2 points.<br>
+&nbsp;
+</p>
+<ol><li>Print the sid and name of students who have enrolled in at least
+one
+course offered by the 'Chemical Engineering' department and at least
+one course offered by the 'Industrial Engineering'
+department.&nbsp;<br>&nbsp;</li><li>Print the name and age of the student(s) with the highest GPA among all students of the same age.<br>&nbsp;</li><li>Top students per major. For each department with more than 8 students majoring in the
+department, print the following information about the
+student(s) with the highest
+GPA within the department: the student id, student name and
+GPA, and the department name the student is major in.<br>&nbsp;</li><li>Difficult courses. For each department offering more than 2 courses, print the department name, course number, and course
+average grade of each course that has an average grade that is at least 5% less than
+the average grade obtained by students in all courses offered by the same
+department.&nbsp;<br>&nbsp;<br></li><li>Top 2 unpopular courses. Print the department name, course number,
+and
+course enrollment of each course that has an enrollment equal to the
+lowest or second to the lowest enrollment of all courses offered by
+the same
+department. The enrollment of a course is the sum of the enrollment of
+all its sections. Note: for this query, you should consider all
+courses, including those with zero enrollment. [<span style="font-style: italic;">Hint</span>: You will need to use
+outer joins for this query; see class notes on the subject and for more the Oracle's online manual on&nbsp;<a href="http://download.oracle.com/docs/cd/B19306_01/server.102/b14200/queries006.htm#i2054062" target="_top">Outer Joins</a> and&nbsp;<a href="http://download.oracle.com/docs/cd/B19306_01/server.102/b14200/statements_10002.htm#i2107296" target="_top">Using Outer Joins: Examples</a>.]<br>
+&nbsp; </li>
+</ol>
+<p>&nbsp;</p>
+<h3>What to do</h3>
+<ul>
+<li>Write one SQL query for each question above.&nbsp;</li>
+<li>Run your SQL queries on one of our Oracle servers (choose any one, they
+are all identical) using the web
+interface that we have set up at:<br><br><br><a href="http://w4111a.cs.columbia.edu/%7Eaf2728/hw2.php">http://w4111a.cs.columbia.edu/~af2728/hw2.php</a> <br><a href="http://w4111e.cs.columbia.edu/%7Eaf2728/hw2.php">http://w4111e.cs.columbia.edu/~af2728/hw2.php</a> <br><a href="http://w4111h.cs.columbia.edu/%7Eaf2728/hw2.php">http://w4111h.cs.columbia.edu/~af2728/hw2.php</a> <br><a href="http://w4111i.cs.columbia.edu/%7Eaf2728/hw2.php">http://w4111i.cs.columbia.edu/~af2728/hw2.php</a> <br><a href="http://w4111l.cs.columbia.edu/%7Eaf2728/hw2.php">http://w4111l.cs.columbia.edu/~af2728/hw2.php</a> <br><a href="http://w4111d.cs.columbia.edu/%7Eaf2728/hw2.php">http://w4111d.cs.columbia.edu/~af2728/hw2.php</a> <br><br><br></li></ul><h3>Notes</h3><ul>
+</ul><ol><li>The SQL interpreter in Oracle is not quite the same as the
+one described in the textbook. If the query you write is not accepted
+by the server,&nbsp;try different equivalent ways until you get one
+that works with Oracle. For example, Oracle doesn't like EXCEPT, use
+MINUS instead. You can find the SQL commands supported by Oracle in the
+<a href="http://www.oracle.com/pls/db102/to_toc?pathname=server.102/b14200/toc.htm&amp;remark=portal+%28Getting+Started%29" target="_top">online manual</a>.</li><li> You will not be able to store your queries on the server
+in any way. You will have to cut and paste your queries and the query
+results into your submission (see next item).</li>
+<li>We do not
+care if your
+answer contains duplicate rows or not.&nbsp;</li>
+</ol>
+<p>&nbsp;</p>
+<h3>Submission Instructions</h3>
+<ol type="a">
+<li type="a">Include your answers for each of the 5 questions in a single document. For each of the 5
+questions, your answer should include&nbsp; <b>(a)</b>
+the <b>SQL query</b> and <b>(b)</b> <b>the
+results of the
+execution</b> of the query on the Oracle server
+described above, which you should&nbsp;cut and paste from the web
+interface
+into your plain-text file. Please format your submission so that each
+query is followed by its corresponding query results (i.e., <em>&lt;query1&gt;
+&lt;results1&gt;; &lt;query2&gt;
+&lt;results2&gt;; ...; &lt;query5&gt;
+&lt;results5&gt;</em>).&nbsp;</li>
+
+
+<li>Submit on CourseWorks <span style="text-decoration: underline;">(</span><a href="https://courseworks.columbia.edu/" target="_top">https://courseworks.columbia.edu/</a>) the
+document you created above as described in the course <a href="../policies.html#how_to_submit">Policies</a> webpage.<span style="font-weight: bold;"></span></li>
+
+</ol><br><h3>Grading</h3>Your grade is based <span style="font-weight: bold;">exclusively</span> on whether your SQL statement is correct, and nothing else. Please note:<br><ol><li>We do not care about the performance of your queries.</li><li>Do not spend time on nicely formating the resulting tables
+- we do not care.</li><li>We
+love elegant solutions but still this is not a criterion when grading
+this particular homework - if your query is correct, you will get full credit
+regardless how convoluted your solution is. We do ask you, however, to write your query in way that is easily understood (using
+appropriate nesting levels, meaningful names, etc.). </li><li>While a
+query that returns a wrong result is certainly wrong, a query that
+returns the correct result is not necessarily correct. In other words,
+a wrong query may produce the correct result by accident, just because
+of the way the tables are currently populated. Your query is correct if and
+only if it produces the correct result for any valid instance of
+this&nbsp;university database.&nbsp;</li></ol></body></html>
